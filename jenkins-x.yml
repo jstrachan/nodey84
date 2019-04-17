@@ -1,1 +1,11 @@
 buildPack: javascript
+pipelineConfig:
+  agent: {}
+  env:
+  - name: GIT_AUTHOR_NAME
+    value: jstrachan
+  pipelines:
+    release:
+      setup:
+        preSteps:
+        - sh: echo "hello there $GIT_AUTHOR_NAME"
